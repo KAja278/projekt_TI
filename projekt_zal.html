@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nazwa-Biuro Podróży</title>
         <link rel="stylesheet" type="text/css" href="projekt_zal.css">
-        
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     </head>
     <body>
         <h1>Nazwa</h1>
@@ -16,9 +17,7 @@
             <a href="kontakt.html">Kontakt</a>
             <a href="onas.html">O nas</a>
         </nav>
-        <div id="mapa" style="height: 500px; width: 100%;margin: 20px 0;">
-            <h2>Mapa destynacji</h2>
-            <img src="mapaswiata.jpg" alt="Mapa destynacji" style="width: 100%; max-width: 600px;border: 1px solid #ccc;border-radius: 8px;">
+        <div id="map" style="height: 500px; width: 100%;margin: 20px 0;">
         </div>
         <script>
             // Inicjalizacja mapy
@@ -33,19 +32,19 @@
             // Punkty z destynacjami (latitude, longitude, i linki do ofert)
             var destinations = [
                 {
-                    name: "Egipt",
+                    name: "Kraj1",
                     coords: [26.8206, 30.8025],
-                    link: "oferta-egipt.html"
+                    link: "oferta-kraj1.html"
                 },
                 {
-                    name: "Włochy",
+                    name: "Kraj2",
                     coords: [41.8719, 12.5674],
-                    link: "oferta-wlochy.html"
+                    link: "oferta-kraj2.html"
                 },
                 {
-                    name: "Grecja",
+                    name: "Kraj3",
                     coords: [39.0742, 21.8243],
-                    link: "oferta-grecja.html"
+                    link: "oferta-kraj3.html"
                 }
             ];
         
