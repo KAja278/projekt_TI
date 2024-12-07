@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nazwa-Biuro Podróży</title>
+        <link rel="stylesheet" type="text/css" href="projekt_zal.css">
+        
+    </head>
+    <body>
+        <h1>Nazwa</h1>
+        <nav>
+            <a href="#">Mapa</a>
+            <a href="oferty.html">Oferty</a>
+            <a href="rezerwacje.html">Rezerwacje</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="onas.html">O nas</a>
+        </nav>
+        <div id="mapa" style="height: 500px; width: 100%;margin: 20px 0;">
+            <h2>Mapa destynacji</h2>
+            <img src="mapaswiata.jpg" alt="Mapa destynacji" style="width: 100%; max-width: 600px;border: 1px solid #ccc;border-radius: 8px;">
+        </div>
+        <script>
+            // Inicjalizacja mapy
+            var map = L.map('map').setView([20, 0], 2); // Środek mapy i początkowy poziom zoomu
+        
+            // Dodanie warstwy kafelkowej (mapa bazowa)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+        
+            // Punkty z destynacjami (latitude, longitude, i linki do ofert)
+            var destinations = [
+                {
+                    name: "Egipt",
+                    coords: [26.8206, 30.8025],
+                    link: "oferta-egipt.html"
+                },
+                {
+                    name: "Włochy",
+                    coords: [41.8719, 12.5674],
+                    link: "oferta-wlochy.html"
+                },
+                {
+                    name: "Grecja",
+                    coords: [39.0742, 21.8243],
+                    link: "oferta-grecja.html"
+                }
+            ];
+        
+            // Dodanie markerów dla każdej destynacji
+            destinations.forEach(dest => {
+                L.marker(dest.coords)
+                    .addTo(map)
+                    .bindPopup(`<b>${dest.name}</b><br><a href="${dest.link}">Przejdź do oferty</a>`)
+                    .on('click', function () {
+                        window.location.href = dest.link; // Przekierowanie po kliknięciu
+                    });
+            });
+        </script>
+    </body>
+</html>
