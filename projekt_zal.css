@@ -84,3 +84,8 @@ img{
 h2{
     text-align: center;
 }
+nav a.active {
+    background-color: #ffffff63; 
+    color: #000; 
+    border-radius: 8px; 
+}
