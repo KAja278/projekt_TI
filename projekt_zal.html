@@ -17,46 +17,70 @@
             <a href="kontakt.html">Kontakt</a>
             <a href="onas.html">O nas</a>
         </nav>
+        <div class="filter-container">
+            <label for="continent-filter">Filtruj według kontynentu:</label>
+            <select id="continent-filter">
+                <option value="all">Wszystkie</option>
+                <option value="Africa">Afryka</option>
+                <option value="Europe">Europa</option>
+                <option value="Asia">Azja</option>
+            </select>
+        </div>
         <div id="map" style="height: 500px; width: 100%;margin: 20px 0;">
         </div>
         <script>
             // Inicjalizacja mapy
-            var map = L.map('map').setView([20, 0], 2); // Środek mapy i początkowy poziom zoomu
-        
-            // Dodanie warstwy kafelkowej (mapa bazowa)
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
-        
-            // Punkty z destynacjami (latitude, longitude, i linki do ofert)
-            var destinations = [
-                {
-                    name: "Kraj1",
-                    coords: [26.8206, 30.8025],
-                    link: "oferta-kraj1.html"
-                },
-                {
-                    name: "Kraj2",
-                    coords: [41.8719, 12.5674],
-                    link: "oferta-kraj2.html"
-                },
-                {
-                    name: "Kraj3",
-                    coords: [39.0742, 21.8243],
-                    link: "oferta-kraj3.html"
-                }
-            ];
-        
-            // Dodanie markerów dla każdej destynacji
-            destinations.forEach(dest => {
-                L.marker(dest.coords)
-                    .addTo(map)
-                    .bindPopup(`<b>${dest.name}</b><br><a href="${dest.link}">Przejdź do oferty</a>`)
-                    .on('click', function () {
-                        window.location.href = dest.link; // Przekierowanie po kliknięciu
-                    });
+    var map = L.map('map').setView([20, 0], 2); // Środek mapy i początkowy poziom zoomu
+
+// Dodanie warstwy kafelkowej (mapa bazowa)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+// Punkty z destynacjami (latitude, longitude, i linki do ofert)
+var destinations = [
+    { name: "Kraj1", coords: [26.8206, 30.8025], link: "oferta-kraj1.html", continent: "Africa" },
+    { name: "Kraj2", coords: [41.8719, 12.5674], link: "oferta-kraj2.html", continent: "Europe" },
+    { name: "Kraj3", coords: [39.0742, 21.8243], link: "oferta-kraj3.html", continent: "Europe" }
+];
+
+// Tablica przechowująca markery
+var markers = [];
+
+// Funkcja do dodawania markerów na mapę
+function addMarkers(destinations) {
+    // Usuwamy istniejące markery
+    markers.forEach(marker => map.removeLayer(marker));
+    markers = []; // Czyścimy tablicę
+
+    // Dodajemy nowe markery na mapę
+    destinations.forEach(dest => {
+        var marker = L.marker(dest.coords)
+            .addTo(map)
+            .bindPopup(`<b>${dest.name}</b><br><a href="${dest.link}">Przejdź do oferty</a>`)
+            .on('click', function () {
+                window.location.href = dest.link; // Przekierowanie po kliknięciu
             });
+        markers.push(marker);
+    });
+}
+
+// Wywołanie funkcji z pełną listą destynacji na start
+addMarkers(destinations);
+
+// Obsługa zmiany w filtrze
+document.getElementById('continent-filter').addEventListener('change', function () {
+    var selectedContinent = this.value;
+
+    // Filtrujemy destynacje według kontynentu
+    var filteredDestinations = destinations.filter(dest => 
+        selectedContinent === "all" || dest.continent === selectedContinent
+    );
+
+    // Aktualizujemy markery na mapie
+    addMarkers(filteredDestinations);
+});
         </script>
         <footer>
             <p>Copyright © 2024 | Nazwa-Biuro Podróży</p>
