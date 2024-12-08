@@ -16,8 +16,18 @@
             <a href="kontakt.html">Kontakt</a>
             <a href="onas.html">O nas</a>
         </nav>
+        <div class="filter-container">
+            <label for="filter">Filtruj według kontynentu:</label>
+            <select id="filter">
+                <option value="all">Wszystkie</option>
+                <option value="europe">Europa</option>
+                <option value="asia">Azja</option>
+                <option value="america">Ameryka</option>
+                <option value="africa">Afryka</option>
+            </select>
+        </div>
         <h2>Nasze Oferty</h2>
-    <div class="offer">
+    <div class="offer" data-category="europe">
         <img src="zdj1.jpg" alt="Kraj1" class="offer-image">
         <div class="offer-details">
             <h2>Kraj1</h2>
@@ -32,7 +42,7 @@
             <a href="oferta-kraj1.html" class="more-button">Więcej</a>
         </div>
     </div>
-    <div class="offer">
+    <div class="offer" data-category="asia">
         <img src="zdj2.jpg" alt="Kraj2" class="offer-image">
         <div class="offer-details">
             <h2>Kraj2</h2>
@@ -47,7 +57,7 @@
             <a href="oferta-kraj2.html" class="more-button">Więcej</a>
         </div>
     </div>
-    <div class="offer">
+    <div class="offer" data-category="africa">
         <img src="zdj3.jpg" alt="Kraj3" class="offer-image">
         <div class="offer-details">
             <h2>Kraj3</h2>
@@ -62,7 +72,7 @@
             <a href="oferta-kraj3.html" class="more-button">Więcej</a>
         </div>
     </div>
-    <div class="offer">
+    <div class="offer" data-category="america">
         <img src="zdj4.jpg" alt="Kraj4" class="offer-image">
         <div class="offer-details">
             <h2>Kraj4</h2>
@@ -77,7 +87,7 @@
             <a href="oferta-kraj4.html" class="more-button">Więcej</a>
         </div>
     </div>
-    <div class="offer">
+    <div class="offer" data-category="europe">
         <img src="zdj5.jpg" alt="Kraj5" class="offer-image">
         <div class="offer-details">
             <h2>Kraj5</h2>
@@ -92,7 +102,7 @@
             <a href="oferta-kraj5.html" class="more-button">Więcej</a>
         </div>
     </div>
-    <div class="offer">
+    <div class="offer" data-category="africa">
         <img src="zdj6.jpg" alt="Kraj6" class="offer-image">
         <div class="offer-details">
             <h2>Kraj6</h2>
@@ -107,7 +117,7 @@
             <a href="oferta-kraj6.html" class="more-button">Więcej</a>
         </div>
     </div>
-    <div class="offer">
+    <div class="offer" data-category="asia">
         <img src="zdj7.jpg" alt="Kraj7" class="offer-image">
         <div class="offer-details">
             <h2>Kraj7</h2>
@@ -123,7 +133,7 @@
         </div>
 
     </div>
-    <div class="offer">
+    <div class="offer" data-category="america">
         <img src="zdj8.jpg" alt="Kraj8" class="offer-image">
         <div class="offer-details">
             <h2>Kraj8</h2>
@@ -141,5 +151,19 @@
     <footer>
         <p>Copyright © 2024 | Nazwa-Biuro Podróży</p>
     </footer>
+    <script>
+        document.getElementById('filter').addEventListener('change', function () {
+    const selectedCategory = this.value;
+    const offers = document.querySelectorAll('.offer');
+
+    offers.forEach(offer => {
+        if (selectedCategory === 'all' || offer.dataset.category === selectedCategory) {
+            offer.style.display = 'flex'; 
+        } else {
+            offer.style.display = 'none'; 
+        }
+    });
+});
+    </script>
     </body>
 </html>
