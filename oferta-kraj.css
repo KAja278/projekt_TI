@@ -140,3 +140,5 @@ nav a.active {
 .star:hover, .star:hover ~ .star {
     color: #ffd700; /* Żółte gwiazdki podczas najechania */
 }
+
+/*halo*/
