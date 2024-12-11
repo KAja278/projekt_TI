@@ -13,7 +13,7 @@
         <nav>
             <a href="#" class="active">Mapa</a>
             <a href="oferty.html">Oferty</a>
-            <a href="rezerwacje.html">Rezerwacje</a>
+            <a href="poradnik.html">Poradnik</a>
             <a href="kontakt.html">Kontakt</a>
             <a href="onas.html">O nas</a>
         </nav>
@@ -24,6 +24,13 @@
                 <option value="Africa">Afryka</option>
                 <option value="Europe">Europa</option>
                 <option value="Asia">Azja</option>
+            </select>
+            <label for="filter-type">Filtruj według rodzaju:</label>
+            <select id="filter-type">
+                <option value="all">Wszystkie</option>
+                <option value="adventure">Przygoda</option>
+                <option value="rare">Rzadko spotykane</option>
+                <option value="cultural">Kulturalna</option>
             </select>
         </div>
         <div id="map" style="height: 500px; width: 100%;margin: 20px 0;">
@@ -40,9 +47,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Punkty z destynacjami (latitude, longitude, i linki do ofert)
 var destinations = [
-    { name: "Kraj1", coords: [26.8206, 30.8025], link: "oferta-kraj1.html", continent: "Africa" },
-    { name: "Kraj2", coords: [41.8719, 12.5674], link: "oferta-kraj2.html", continent: "Europe" },
-    { name: "Kraj3", coords: [39.0742, 21.8243], link: "oferta-kraj3.html", continent: "Europe" }
+    { name: "Kraj1", coords: [26.8206, 30.8025], link: "oferta-kraj1.html", continent: "Africa", type:"rare" },
+    { name: "Kraj2", coords: [41.8719, 12.5674], link: "oferta-kraj2.html", continent: "Europe", type:"cultural"},
+    { name: "Kraj3", coords: [39.0742, 21.8243], link: "oferta-kraj3.html", continent: "Europe", type:"adventure"}
 ];
 
 // Tablica przechowująca markery
@@ -70,17 +77,22 @@ function addMarkers(destinations) {
 addMarkers(destinations);
 
 // Obsługa zmiany w filtrze
-document.getElementById('continent-filter').addEventListener('change', function () {
-    var selectedContinent = this.value;
+document.getElementById('continent-filter').addEventListener('change', applyFilters);
+document.getElementById('filter-type').addEventListener('change', applyFilters);
 
-    // Filtrujemy destynacje według kontynentu
+function applyFilters() {
+    var selectedContinent = document.getElementById('continent-filter').value;
+    var selectedType = document.getElementById('filter-type').value;
+
+    // Filtrujemy destynacje według kontynentu i rodzaju
     var filteredDestinations = destinations.filter(dest => 
-        selectedContinent === "all" || dest.continent === selectedContinent
+        (selectedContinent === "all" || dest.continent === selectedContinent) &&
+        (selectedType === "all" || dest.type === selectedType)
     );
 
     // Aktualizujemy markery na mapie
     addMarkers(filteredDestinations);
-});
+}
         </script>
         <footer>
             <p>Copyright © 2024 | Nazwa-Biuro Podróży</p>

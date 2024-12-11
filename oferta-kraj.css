@@ -94,18 +94,49 @@ nav a.active {
     text-align: center;
 }
 
-#continent-filter {
+#continent-filter, #filter-type {
     padding: 5px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
 
+.section {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
+.section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #000;
+}
 
-#filter-type {
-    padding: 5px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+.section p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.rating-container {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 30px;
+}
+
+.star {
+    color: #ccc; /* Szare gwiazdki domyślnie */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.star.active {
+    color: #ffd700; /* Żółte gwiazdki aktywne */
+}
+
+.star:hover, .star:hover ~ .star {
+    color: #ffd700; /* Żółte gwiazdki podczas najechania */
 }

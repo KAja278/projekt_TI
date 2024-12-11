@@ -12,7 +12,7 @@
         <nav>
             <a href="projekt_zal.html">Mapa</a>
             <a href="#" class="active">Oferty</a>
-            <a href="rezerwacje.html">Rezerwacje</a>
+            <a href="poradnik.html">Poradnik</a>
             <a href="kontakt.html">Kontakt</a>
             <a href="onas.html">O nas</a>
         </nav>
@@ -25,9 +25,16 @@
                 <option value="america">Ameryka</option>
                 <option value="africa">Afryka</option>
             </select>
+            <label for="filter-type">Filtruj według rodzaju:</label>
+            <select id="filter-type">
+                <option value="all">Wszystkie</option>
+                <option value="adventure">Przygoda</option>
+                <option value="rare">Rzadko spotykane</option>
+                <option value="cultural">Kulturalna</option>
+            </select>
         </div>
         <h2>Nasze Oferty</h2>
-    <div class="offer" data-category="europe">
+    <div class="offer" data-category="europe" data-type="rare">
         <img src="zdj1.jpg" alt="Kraj1" class="offer-image">
         <div class="offer-details">
             <h2>Kraj1</h2>
@@ -42,7 +49,7 @@
             <a href="oferta-kraj1.html" class="more-button">Więcej</a>
         </div>
     </div>
-    <div class="offer" data-category="asia">
+    <div class="offer" data-category="asia" data-type="cultural">
         <img src="zdj2.jpg" alt="Kraj2" class="offer-image">
         <div class="offer-details">
             <h2>Kraj2</h2>
@@ -57,7 +64,7 @@
             <a href="oferta-kraj2.html" class="more-button">Więcej</a>
         </div>
     </div>
-    <div class="offer" data-category="africa">
+    <div class="offer" data-category="africa" data-type="adventure">
         <img src="zdj3.jpg" alt="Kraj3" class="offer-image">
         <div class="offer-details">
             <h2>Kraj3</h2>
@@ -72,7 +79,7 @@
             <a href="oferta-kraj3.html" class="more-button">Więcej</a>
         </div>
     </div>
-    <div class="offer" data-category="america">
+    <div class="offer" data-category="america" data-type="rare">
         <img src="zdj4.jpg" alt="Kraj4" class="offer-image">
         <div class="offer-details">
             <h2>Kraj4</h2>
@@ -87,7 +94,7 @@
             <a href="oferta-kraj4.html" class="more-button">Więcej</a>
         </div>
     </div>
-    <div class="offer" data-category="europe">
+    <div class="offer" data-category="europe" data-type="adventure">
         <img src="zdj5.jpg" alt="Kraj5" class="offer-image">
         <div class="offer-details">
             <h2>Kraj5</h2>
@@ -102,7 +109,7 @@
             <a href="oferta-kraj5.html" class="more-button">Więcej</a>
         </div>
     </div>
-    <div class="offer" data-category="africa">
+    <div class="offer" data-category="africa" data-type="cultural">
         <img src="zdj6.jpg" alt="Kraj6" class="offer-image">
         <div class="offer-details">
             <h2>Kraj6</h2>
@@ -117,7 +124,7 @@
             <a href="oferta-kraj6.html" class="more-button">Więcej</a>
         </div>
     </div>
-    <div class="offer" data-category="asia">
+    <div class="offer" data-category="asia" data-type="rare">
         <img src="zdj7.jpg" alt="Kraj7" class="offer-image">
         <div class="offer-details">
             <h2>Kraj7</h2>
@@ -133,7 +140,7 @@
         </div>
 
     </div>
-    <div class="offer" data-category="america">
+    <div class="offer" data-category="america" data-type="adventure">
         <img src="zdj8.jpg" alt="Kraj8" class="offer-image">
         <div class="offer-details">
             <h2>Kraj8</h2>
@@ -152,18 +159,25 @@
         <p>Copyright © 2024 | Nazwa-Biuro Podróży</p>
     </footer>
     <script>
-        document.getElementById('filter').addEventListener('change', function () {
-    const selectedCategory = this.value;
+       document.getElementById('filter').addEventListener('change', applyFilters);
+document.getElementById('filter-type').addEventListener('change', applyFilters);
+
+function applyFilters() {
+    const selectedCategory = document.getElementById('filter').value;
+    const selectedType = document.getElementById('filter-type').value;
     const offers = document.querySelectorAll('.offer');
 
     offers.forEach(offer => {
-        if (selectedCategory === 'all' || offer.dataset.category === selectedCategory) {
-            offer.style.display = 'flex'; 
+        const matchesCategory = selectedCategory === 'all' || offer.dataset.category === selectedCategory;
+        const matchesType = selectedType === 'all' || offer.dataset.type === selectedType;
+
+        if (matchesCategory && matchesType) {
+            offer.style.display = 'flex';
         } else {
-            offer.style.display = 'none'; 
+            offer.style.display = 'none';
         }
     });
-});
+}
     </script>
     </body>
 </html>
