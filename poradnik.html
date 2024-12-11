@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Nazwa-Biuro Podróży</title>
-        <link rel="stylesheet" type="text/css" href="projekt_zal.css">
+        <link rel="stylesheet" type="text/css" href="poradnik.css">
 
     </head>
     <body>
@@ -15,6 +15,48 @@
             <a href="kontakt.html">Kontakt</a>
             <a href="onas.html">O nas</a>
         </nav>
+        <div class="content">
+            <h2>Przewodnik po Niezwykłych Miejscach</h2>
+
+            <div class="guide">
+                <div class="guide-item">
+                    <h3>Wyprawa w góry wysokie – Jak się przygotować?</h3>
+                    <img src="gory.jpg" alt="Wyprawa w góry" class="guide-image">
+                    <p>Planujesz podróż w wysokie góry? Zobacz nasze porady, jak się przygotować, co zabrać i na co zwrócić uwagę...</p>
+                    <a href="wyprawa-gory.html" class="more-button">Czytaj więcej</a>
+                </div>
+
+                <div class="guide-item">
+                    <h3>Podróż daleko od cywilzacji</h3>
+                    <img src="pustynia.jpg" alt="sucha pustynia" class="guide-image">
+                    <p>Chcesz udać się w miejsce daleko od ludzi? Oto nasz poradnik, jak przetrwać w ekstremalnych warunkach...</p>
+                    <a href="wyprawa-pustynia.html" class="more-button">Czytaj więcej</a>
+                </div>
+                
+                <!-- Można dodać kolejne artykuły w podobnym formacie -->
+            </div>
+            
+            <!-- Sekcja z komentarzami i poradami użytkowników -->
+            <div class="comments-section">
+                <h3>Podziel się swoimi doświadczeniami</h3>
+                <form action="#">
+                    <textarea placeholder="Podziel się swoją poradą lub opinią..." rows="4" required></textarea><br>
+                    <button type="submit" class="submit-comment">Dodaj komentarz</button>
+                </form>
+                <div class="comments-list">
+                    <div class="comment">
+                        <p><strong>Anna K.</strong> - "Polecam trasę X w Alpach. Piękne widoki, ale trzeba być przygotowanym na zmienne warunki pogodowe."</p>
+                    </div>
+                    <div class="comment">
+                        <p><strong>Jan Z.</strong> - "Warto założyć obuwie, które ułatwi podróż przez piasek. Warto też pamiętać o kurtce, gdyż temepratura nocami bywa niska."</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+
         <footer>
             <p>Copyright © 2024 | Nazwa-Biuro Podróży</p>
         </footer>
