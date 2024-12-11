@@ -1,0 +1,151 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+h2, h3 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+    background-color: #000;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 27px auto;
+    flex-wrap: wrap;
+}
+
+nav a {
+    flex: 1 1 auto;
+    text-align: center;
+    line-height: 50px;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    padding: 0 5px;
+    min-width: 80px;
+}
+
+nav a:hover {
+    background-color: #ffffff63;
+    border-radius: 8px;
+}
+
+nav a.active {
+    background-color: #ffffff63;
+    color: #000;
+    border-radius: 8px;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.guide {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.guide-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 45%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.guide-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.guide-item h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.more-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #64676b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.more-button:hover {
+    background-color: #555;
+}
+
+.comments-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    resize: vertical;
+}
+
+.submit-comment {
+    background-color: #64676b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-comment:hover {
+    background-color: #555;
+}
+
+.comments-list {
+    margin-top: 20px;
+}
+
+.comment {
+    background-color: #f4f4f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.comment p {
+    margin: 0;
+}
