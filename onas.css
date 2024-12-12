@@ -13,26 +13,69 @@ h1 {
     color: #0066cc;
 }
 
-nav {
-    text-align: center;
-    background: #333;
-    padding: 10px;
+nav{
+    /*
+    width: 575px;
+    height: 50px;
+    margin: 27px auto;
+    background-color: #000;
+    border-radius: 8px;
+    */
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    padding: 0 10px; 
+    background-color: #13469a;
+    border-radius: 8px;
+    width: 90%; 
+    max-width: 1000px; 
+    margin: 27px auto;
+    flex-wrap: wrap;
 }
 
-nav a {
-    color: white;
+nav a{
+    /*
+    line-height: 50px;
+    height: 100%;
+    font-size: 15px;
+    display: inline-block;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    color:#fff;
+    cursor: pointer;
+    */
+    flex: 1 1 auto; 
+    text-align: center;
+    line-height: 50px;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    padding: 0 5px; 
+    min-width: 80px; 
 }
 
-nav a:hover {
-    text-decoration: underline;
+nav a:hover{
+    background-color: #ffffff63;
+    border-radius: 8px;
 }
 
+@media (max-width:600px){
+    nav{
+        flex-wrap: wrap;
+        height: auto;
+    }
+    nav a{
+        flex: 1 1 45%;
+        margin-bottom: 10px;
+    }
+
+}
 nav .active {
     font-weight: bold;
-    color: #ffcc00;
+    color: #132b53;
 }
 
 header {
@@ -72,6 +115,8 @@ article {
 }
 
 form {
+    
+
     max-width: 600px;
     margin: 0 auto;
 }
