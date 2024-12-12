@@ -160,11 +160,11 @@
         <p>Copyright © 2024 | Nazwa-Biuro Podróży</p>
     </footer>
     <script>
-       document.getElementById('filter').addEventListener('change', applyFilters);
+       document.getElementById('continent-filter').addEventListener('change', applyFilters);
 document.getElementById('filter-type').addEventListener('change', applyFilters);
 
 function applyFilters() {
-    const selectedCategory = document.getElementById('filter').value;
+    const selectedCategory = document.getElementById('continent-filter').value;
     const selectedType = document.getElementById('filter-type').value;
     const offers = document.querySelectorAll('.offer');
 
