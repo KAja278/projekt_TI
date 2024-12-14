@@ -24,6 +24,8 @@
                 <option value="Africa">Afryka</option>
                 <option value="Europe">Europa</option>
                 <option value="Asia">Azja</option>
+                <option value="America">Ameryka</option>
+                <option value="Oceania">Oceania</option>
             </select>
             <label for="filter-type">Filtruj według rodzaju:</label>
             <select id="filter-type">
@@ -47,9 +49,16 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Punkty z destynacjami (latitude, longitude, i linki do ofert)
 var destinations = [
-    { name: "Kraj1", coords: [26.8206, 30.8025], link: "oferta-kraj1.html", continent: "Africa", type:"rare" },
-    { name: "Kraj2", coords: [41.8719, 12.5674], link: "oferta-kraj2.html", continent: "Europe", type:"cultural"},
-    { name: "Kraj3", coords: [39.0742, 21.8243], link: "oferta-kraj3.html", continent: "Europe", type:"adventure"}
+    { name: "Islandia i Grenlandia", coords: [64.7894, -20.8025], link: "oferta-kraj1.html", continent: "Europe", type:"rare" },
+    { name: "Mongolia", coords: [46.1391, 102.6025], link: "oferta-kraj2.html", continent: "Asia", type:"cultural"},
+    { name: "Madagaskar", coords: [-19.8623, 46.3183], link: "oferta-kraj3.html", continent: "Africa", type:"adventure"},
+    { name: "Bhutan", coords: [27.5723, 90.3914], link: "oferta-kraj4.html", continent: "Asia", type:"cultural"},
+    { name: "Papua Nowa Gwinea", coords: [-5.7810, 143.9612], link: "oferta-kraj5.html", continent: "Oceania", type:"adventure"},
+    { name: "Chile", coords: [-25.4099, -69.3718], link: "oferta-kraj6.html", continent: "America", type:"cultural"},
+    { name: "Jemen-Wyspa Sokotra", coords: [12.4803, 53.8951], link: "oferta-kraj7.html", continent: "Africa", type:"adventure"},
+    { name: "Gruzja i Armenia", coords: [41.2560, 44.1267], link: "oferta-kraj8.html", continent: "Europe", type:"cultural"},
+    { name: "Gwatemala", coords: [15.5019, -90.1911], link: "oferta-kraj9.html", continent: "America", type:"cultural"}
+    
 ];
 
 // Tablica przechowująca markery
