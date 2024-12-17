@@ -2,7 +2,7 @@
 <html lang="pl" dir="ltr">
     <head>
         <meta charset="UTF-8">
-        <title>Nazwa-Biuro Podróży</title>
+        <title>Kraken-Biuro Podróży</title>
         <link rel="stylesheet" type="text/css" href="./poradnik.css">
 
     </head>
@@ -15,11 +15,70 @@
             <a href="./kontakt.html">Kontakt</a>
             <a href="./onas.html">O nas</a>
         </nav>
-        
+        <section>
+            <h2>Podróż daleko od cywilzacji</h2>
+        </section>
+        <section>
+            <h2>Ocena artykułu</h2>
+            <div class="rating-container" id="rating-container">
+                <span data-value="1" class="star">&#9733;</span>
+                <span data-value="2" class="star">&#9733;</span>
+                <span data-value="3" class="star">&#9733;</span>
+                <span data-value="4" class="star">&#9733;</span>
+                <span data-value="5" class="star">&#9733;</span>
+            </div>
+            <p id="rating-message">Kliknij, aby ocenić!</p>
+        </section>
 
         <footer>
-            <p>Copyright © 2024 | Nazwa-Biuro Podróży</p>
+            <p>Copyright © 2024 | Kraken-Biuro Podróży</p>
         </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+        const stars = document.querySelectorAll('.star');
+        const message = document.getElementById('rating-message');
+        let selectedRating = 0;
+    
+        // Resetuje podświetlenie wszystkich gwiazdek
+        function resetStars() {
+            stars.forEach(star => star.classList.remove('active'));
+        }
+    
+        // Podświetla gwiazdki do określonego indeksu
+        function setActiveStars(rating) {
+            stars.forEach(star => {
+                if (parseInt(star.dataset.value) <= rating) {
+                    star.classList.add('active');
+                }
+            });
+        }
+    
+        // Obsługa najechania myszką na gwiazdkę
+        stars.forEach(star => {
+            star.addEventListener('mouseover', () => {
+                resetStars(); // Resetujemy podświetlenie
+                setActiveStars(parseInt(star.dataset.value)); // Podświetlamy wszystkie gwiazdki <= tej, na którą najechaliśmy
+            });
+    
+            // Resetuje podświetlenie po opuszczeniu gwiazdki
+            star.addEventListener('mouseout', () => {
+                if (selectedRating > 0) {
+                    setActiveStars(selectedRating); // Przywracamy zaznaczoną ocenę
+                } else {
+                    resetStars(); // Resetujemy gwiazdki do stanu początkowego, jeśli nie została kliknięta żadna gwiazdka
+                }
+            });
+    
+            // Obsługa kliknięcia na gwiazdkę
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.dataset.value); // Zapamiętujemy ocenę
+                resetStars(); // Resetujemy wszystkie gwiazdki
+                setActiveStars(selectedRating); // Podświetlamy gwiazdki do wybranej oceny
+                message.textContent = `Dziękujemy za ocenę: ${selectedRating} gwiazdek!`; // Wyświetlamy wiadomość
+            });
+        });
+    });
+        </script>
     </body>
     
 </html>

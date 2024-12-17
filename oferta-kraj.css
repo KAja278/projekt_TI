@@ -123,11 +123,21 @@ h2{
     margin-bottom: 10px;
 }
 
-.rating-container {
+footer {
     text-align: center;
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+
+.kryteria {
+    text-align: left;
     margin: 20px 0;
     font-size: 30px;
 }
+
 
 .star {
     color: #ccc; /* Szare gwiazdki domyślnie */
@@ -137,16 +147,4 @@ h2{
 
 .star.active {
     color: #ffd700; /* Żółte gwiazdki aktywne */
-}
-
-.star:hover, .star:hover ~ .star {
-    color: #ffd700; /* Żółte gwiazdki podczas najechania */
-}
-
-footer {
-    text-align: center;
-    background: #333;
-    color: white;
-    padding: 10px 0;
-    margin-top: 20px;
 }

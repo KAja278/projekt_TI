@@ -180,3 +180,23 @@ footer {
     margin-top: 20px;
 }
 
+
+.rating-container {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 30px;
+}
+
+.star {
+    color: #ccc; /* Szare gwiazdki domyślnie */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.star.active {
+    color: #ffd700; /* Żółte gwiazdki aktywne */
+}
+
+.star:hover, .star:hover ~ .star {
+    color: #ffd700; /* Żółte gwiazdki podczas najechania */
+}
