@@ -132,7 +132,7 @@ footer {
 }
 
 
-.kryteria {
+.kryterium {
     text-align: left;
     margin: 20px 0;
     font-size: 30px;
@@ -141,8 +141,6 @@ footer {
 
 .star {
     color: #ccc; /* Szare gwiazdki domyślnie */
-    cursor: pointer;
-    transition: color 0.3s;
 }
 
 .star.active {
