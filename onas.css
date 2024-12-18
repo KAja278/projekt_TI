@@ -157,3 +157,81 @@ footer {
     padding: 10px 0;
     margin-top: 20px;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #13469a;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #112a61;
+}
+
+
+.team {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    text-align: center;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+.faq {
+    margin-top: 20px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-item h3 {
+    font-size: 18px;
+    color: #13469a;
+}

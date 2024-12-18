@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <title>Kraken-Biuro Podróży</title>
         <link rel="stylesheet" type="text/css" href="./onas.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
         <link rel="icon" type="image/jpg" href="./favicon1.jpg">
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     </head>
@@ -24,25 +26,122 @@
             <article>
                 <h2>Drogi komunikacji</h2>
                 <ul>
-                    <li>adres email: </li>
-                    <li>numer telefonu: </li>
-                    <li>media społecznościowe: </li>
-                    <li>adres: </li>
+                    <li>Adres email: kontakt@kraken.pl</li>
+                    <li>Numer telefonu: +48 123 456 789</li>
+                    <li>Media społecznościowe: 
+                        <a href="https://facebook.com/krakenbiuropodrozy">Facebook</a>, 
+                        <a href="https://instagram.com/krakenbiuropodrozy">Instagram</a>
+                    </li>
+                    <li>Adres: Kraków, ul. Przykładowa 123</li>
                 </ul>
             </article>
-            <article>
-                <h2>Skontaktuj się z nami tutaj</h2>
-                <form>
-                    <div>
-                        <label class="opinia">Jesteś zainteresowany którąś z ofert? Daj znać, a my zajmiemy się resztą.</label><br>
-                        <textarea rows="4" cols="50" placeholder="Skontaktuj się z nami."></textarea><br>
-                        <button type="submit">Zatwierdź</button>
-                    </div>
-                </form>
-            </article>
+            
+        </section>
+        <h2>Adres Siedziby</h2>
+        <div id="map" style="height: 500px; width: 100%;margin: 20px 0;">
+        </div>
+        <section>
+            <h2>Formularz Kontaktowy</h2>
+            <form action="submit_form.php" method="POST">
+                <div class="form-group">
+                    <label for="first-name">Imię:</label>
+                    <input type="text" id="first-name" name="first-name" required placeholder="Wpisz swoje imię">
+                </div>
+                
+                <div class="form-group">
+                    <label for="last-name">Nazwisko:</label>
+                    <input type="text" id="last-name" name="last-name" required placeholder="Wpisz swoje nazwisko">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="Wpisz swój e-mail">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Numer telefonu:</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Wpisz swój numer telefonu">
+                </div>
+                
+                <div class="form-group">
+                    <label for="travel-date">Data podróży:</label>
+                    <input type="date" id="travel-date" name="travel-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="num-persons">Liczba osób:</label>
+                    <input type="number" id="num-persons" name="num-persons" min="1" max="10" required placeholder="Liczba osób">
+                </div>
+                
+                <div class="form-group">
+                    <label for="offer">Wybór oferty:</label>
+                    <select id="offer" name="offer" required>
+                        <option value="" disabled selected>Wybierz ofertę</option>
+                        <option value="islandia">Islandia i Grenlandia</option>
+                        <option value="mongolia">Mongolia</option>
+                        <option value="madagaskar">Madagaskar</option>
+                        <option value="bhutan">Bhutan</option>
+                        <option value="papua">Papua Nowa Gwinea</option>
+                        <option value="chile">Jemen-Wyspa Sokotra</option>
+                        <option value="gruzja">Gruzja i Armenia</option>
+                        <option value="gwatemala">Gwatemala</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comments">Dodatkowe informacje:</label>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Wpisz dodatkowe informacje, jeśli chcesz"></textarea>
+                </div>
+                
+                <button type="submit">Zapytaj</button>
+                
+                
+            </form>
         </section>
         <footer>
             <p>Copyright © 2024 | Kraken-Biuro Podróży</p>
         </footer>
+        
+        <script>
+            // Inicjalizacja mapy
+    var map = L.map('map').setView([50, 19.81], 11); // Środek mapy i początkowy poziom zoomu
+
+// Dodanie warstwy kafelkowej (mapa bazowa)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+// Punkty z destynacjami (latitude, longitude, i linki do ofert)
+var destinations = [
+    { name: "Adres siedziby", coords: [49.9997, 19.8172]}
+    
+    
+];
+
+// Tablica przechowująca markery
+var markers = [];
+
+// Funkcja do dodawania markerów na mapę
+function addMarkers(destinations) {
+    // Usuwamy istniejące markery
+    markers.forEach(marker => map.removeLayer(marker));
+    markers = []; // Czyścimy tablicę
+
+    // Dodajemy nowe markery na mapę
+    destinations.forEach(dest => {
+        var marker = L.marker(dest.coords)
+            .addTo(map)
+            .bindPopup(`<b>${dest.name}</b><br><a href="${dest.link}">Przejdź do oferty</a>`)
+            .on('click', function () {
+                window.location.href = dest.link; // Przekierowanie po kliknięciu
+            });
+        markers.push(marker);
+    });
+}
+
+// Wywołanie funkcji z pełną listą destynacji na start
+addMarkers(destinations);
+</script>
     </body>
 </html>

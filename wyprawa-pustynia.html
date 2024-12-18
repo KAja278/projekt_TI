@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="pl" dir="ltr">
     <head>
@@ -6,9 +9,10 @@
         <link rel="stylesheet" type="text/css" href="./poradnik.css">
         <link rel="icon" type="image/jpg" href="./favicon1.jpg">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     </head>
     <body>
-        <h1>Nazwa</h1>
+        <h1>Kraken</h1>
         <nav>
             <a href="./index.html">Mapa</a>
             <a href="./oferty.html">Oferty</a>
@@ -16,10 +20,11 @@
             <a href="./kontakt.html">Kontakt</a>
             <a href="./onas.html">O nas</a>
         </nav>
-        <section>
+        <section class="arcticle">
             <h2>Podróż daleko od cywilzacji</h2>
+            <p>Tu zaczyna się treść artykułu, w której znajdziesz wskazówki, jak przygotować się do wyprawy w odległe miejsca...</p>
         </section>
-        <section>
+        <section class="rating">
             <h2>Ocena artykułu</h2>
             <div class="rating-container" id="rating-container">
                 <span data-value="1" class="star">&#9733;</span>
@@ -30,6 +35,24 @@
             </div>
             <p id="rating-message">Kliknij, aby ocenić!</p>
         </section>
+        <section class="comments">
+            <h2>Dodaj komentarz</h2>
+            <div class="comments-section">
+                <textarea placeholder="Napisz komentarz..." rows="4"></textarea>
+                <button class="submit-comment">Wyślij</button>
+            </div>
+
+            <div class="comments-list">
+                
+                <div class="comment">
+                    <p><strong>Jan Kowalski:</strong> Wspaniałe wskazówki, dzięki za pomoc!</p>
+                </div>
+                <div class="comment">
+                    <p><strong>Anna Nowak:</strong> Bardzo przydatny artykuł, dziękuję!</p>
+                </div>
+            </div>
+        </section>
+
 
         <footer>
             <p>Copyright © 2024 | Kraken-Biuro Podróży</p>
