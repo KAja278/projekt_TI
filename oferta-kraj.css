@@ -6,6 +6,7 @@ body {
     color: #333;
     background-color: #f9f9f9;
     max-width: 1200px;
+    box-sizing: border-box;
     margin: 0 auto;
 }
 
@@ -127,6 +128,8 @@ img {
     border-radius: 8px;
     background-color: #e6f2ff;
     border: 3px solid #003366;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .content-with-image .text {
