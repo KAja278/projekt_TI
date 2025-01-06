@@ -130,6 +130,7 @@ img {
     border: 3px solid #003366;
     max-width: 100%;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .content-with-image .text {
@@ -138,6 +139,7 @@ img {
     border: 3px solid #003366;
     background-color: #e6f2ff;
     border-radius: 8px;
+    box-sizing: border-box;
 }
 
 .content-with-image .image {
@@ -147,6 +149,7 @@ img {
     border-radius: 8px;
     overflow: hidden;
     position: relative;
+    box-sizing: border-box;
 }
 
 .content-with-image .image img {
@@ -274,7 +277,7 @@ footer {
     }
 
     .content-with-image .image img {
-        max-width: 100%;
+        width: 100%;
         height: auto;
         object-fit: cover;
     }
