@@ -135,11 +135,13 @@ img {
 
 .content-with-image .text {
     width: 60%;
-    padding: 20px;
+    
     border: 3px solid #003366;
     background-color: #e6f2ff;
     border-radius: 8px;
     box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
 }
 
 .content-with-image .image {
