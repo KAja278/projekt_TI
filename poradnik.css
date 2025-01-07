@@ -133,14 +133,13 @@ nav .active {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-top: 40px;
 }
-
 textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    border: 1px solid #ddd;
-    resize: vertical;
+    box-sizing: border-box;
 }
 
 .submit-comment {
@@ -255,4 +254,22 @@ footer {
 .submit-comment:hover {
     background: #ffcc00;
     color: #333;
+}
+
+form .opinia {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
