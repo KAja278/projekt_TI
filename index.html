@@ -67,22 +67,19 @@ var markers = [];
 
 // Funkcja do dodawania markerów na mapę
 function addMarkers(destinations) {
-    // Usuwamy istniejące markery
-    markers.forEach(marker => map.removeLayer(marker));
-    markers = []; // Czyścimy tablicę
+        // Usuwamy istniejące markery
+        markers.forEach(marker => map.removeLayer(marker));
+        markers = []; // Czyścimy tablicę
 
-    // Dodajemy nowe markery na mapę
-    destinations.forEach(dest => {
-        var marker = L.marker(dest.coords)
-            .addTo(map)
-            .bindPopup(`<b>${dest.name}</b><br><a href="${dest.link}">Przejdź do oferty</a>`)
-            .on('click', function () {
-                window.location.href = dest.link; // Przekierowanie po kliknięciu
-            });
-        markers.push(marker);
-    });
-}
+        // Dodajemy nowe markery na mapę
+        destinations.forEach(dest => {
+            var marker = L.marker(dest.coords)
+                .addTo(map)
+                .bindPopup(`<b>${dest.name}</b><br><a href="${dest.link}" target="_blank">Przejdź do oferty</a>`); // Wyświetlenie chmurki z opcją
 
+            markers.push(marker);
+        });
+    }
 // Wywołanie funkcji z pełną listą destynacji na start
 addMarkers(destinations);
 
