@@ -13,13 +13,7 @@ h1 {
     color: #0066cc;
 }
 nav{
-    /*
-    width: 575px;
-    height: 50px;
-    margin: 27px auto;
-    background-color: #000;
-    border-radius: 8px;
-    */
+    
     display: flex;
     justify-content: space-around; 
     align-items: center;
@@ -33,17 +27,7 @@ nav{
 }
 
 nav a{
-    /*
-    line-height: 50px;
-    height: 100%;
-    font-size: 15px;
-    display: inline-block;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: center;
-    color:#fff;
-    cursor: pointer;
-    */
+    
     flex: 1 1 auto; 
     text-align: center;
     line-height: 50px;
@@ -101,7 +85,7 @@ nav .active {
 }
 
 .guide-item img {
-    max-width: 100%;
+    max-width: 85%;
     height: auto;
     border-radius: 8px;
 }
@@ -189,17 +173,17 @@ footer {
 }
 
 .star {
-    color: #ccc; /* Szare gwiazdki domyślnie */
+    color: #ccc; 
     cursor: pointer;
     transition: color 0.3s;
 }
 
 .star.active {
-    color: #ffd700; /* Żółte gwiazdki aktywne */
+    color: #ffd700; 
 }
 
 .star:hover, .star:hover ~ .star {
-    color: #ffd700; /* Żółte gwiazdki podczas najechania */
+    color: #ffd700; 
 }
 
 
