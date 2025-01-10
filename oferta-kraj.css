@@ -6,7 +6,6 @@ body {
     color: #333;
     background-color: #f9f9f9;
     max-width: 1200px;
-    box-sizing: border-box;
     margin: 0 auto;
 }
 
@@ -28,7 +27,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
+    padding: 0 10px;
     background-color: #13469a;
     border-radius: 8px;
     width: 90%;
@@ -128,22 +127,14 @@ img {
     border-radius: 8px;
     background-color: #e6f2ff;
     border: 3px solid #003366;
-    max-width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
 }
 
 .content-with-image .text {
-    width: 35%;
+    width: 60%;
     padding: 20px;
     border: 3px solid #003366;
     background-color: #e6f2ff;
     border-radius: 8px;
-    box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
-    margin-right: 5%;
-    gap: 20px;
 }
 
 .content-with-image .image {
@@ -153,7 +144,6 @@ img {
     border-radius: 8px;
     overflow: hidden;
     position: relative;
-    box-sizing: border-box;
 }
 
 .content-with-image .image img {
@@ -165,6 +155,17 @@ img {
 
 .content-with-image .image:hover img {
     transform: scale(1.05);
+}
+
+/* Dodanie reguł dla większych ekranów */
+@media (min-width: 1000px) {
+    .content-with-image .text {
+        width: 65%; /* Powiększenie kontenera tekstowego */
+    }
+
+    .content-with-image .image {
+        width: 30%; /* Zmniejszenie szerokości obrazu */
+    }
 }
 
 .main-image img {
@@ -231,6 +232,11 @@ footer {
     margin-right: 5px;
 }
 
+.star:hover {
+    color: #ffcc00; 
+    transform: scale(1.2); 
+}
+
 .star.active {
     color: #ffd700; 
 }
@@ -267,7 +273,6 @@ footer {
     .content-with-image .text {
         width: 100%; 
         margin: 0;
-        
     }
 
     .content-with-image .image {
@@ -276,7 +281,7 @@ footer {
     }
 
     .content-with-image .image img {
-        width: 100%;
+        max-width: 100%;
         height: auto;
         object-fit: cover;
     }
@@ -291,3 +296,4 @@ footer {
         max-width: 100%;
     }
 }
+
