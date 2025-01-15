@@ -4,61 +4,71 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #000000;
     background-color: #f9f9f9;
+    
 }
 
 h1 {
     text-align: center;
-    color: #0066cc;
+    color: #42546a; 
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: 20px 0;
 }
 
-nav{
-    /*
-    width: 575px;
-    height: 50px;
-    margin: 27px auto;
-    background-color: #000;
-    border-radius: 8px;
-    */
+
+header {
+    background-color: #6e8daf; 
+    color: #ffffff;
     display: flex;
-    justify-content: space-around; 
     align-items: center;
-    padding: 10px; 
-    background-color: #13469a;
-    border-radius: 8px;
-    width: 90%; 
-    max-width: 1000px; 
-    margin: 27px auto;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    max-height: 40px;
+    margin-right: 10px;
+}
+
+header .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1b232e;
+}
+
+
+
+nav{
+    background-color: #42546a; 
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav a{
-    /*
-    line-height: 50px;
-    height: 100%;
-    font-size: 15px;
-    display: inline-block;
+    color: #1b232e;
     text-decoration: none;
     text-transform: uppercase;
-    text-align: center;
-    color:#fff;
-    cursor: pointer;
-    */
-    flex: 1 1 auto; 
-    text-align: center;
-    line-height: 50px;
-    font-size: 15px;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #fff;
-    cursor: pointer;
-    padding: 0 5px; 
-    min-width: 80px; 
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 nav a:hover{
-    background-color: #ffffff63;
+    background-color: #6e8daf/*#ffffff63*/;
     border-radius: 8px;
 }
 
@@ -74,16 +84,22 @@ nav a:hover{
 
 }
 nav .active {
-    font-weight: bold;
-    color: #132b53;
+    background-color: #9dccfa; 
+    color: #1b232e; 
 }
 
-header {
-    background: #0066cc;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
+img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
 }
+
+h2{
+    text-align: center;
+}
+
 
 section {
     padding: 20px;
@@ -111,7 +127,7 @@ article {
 
 .gallery img:hover {
     transform: scale(1.1);
-    border-color: #0066cc;
+    border-color: #42546a;
 }
 
 form {
@@ -136,7 +152,7 @@ form textarea {
 }
 
 form button {
-    background: #0066cc;
+    background: #42546a;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -151,10 +167,10 @@ form button:hover {
 }
 
 footer {
+    background-color: #1b232e; 
+    color: #ffffff;
     text-align: center;
-    background: #333;
-    color: white;
-    padding: 10px 0;
+    padding: 15px 0;
     margin-top: 20px;
 }
 
@@ -189,7 +205,7 @@ input, textarea {
 }
 
 button {
-    background-color: #13469a;
+    background-color: #42546a;
     color: #fff;
     font-size: 16px;
     padding: 10px 20px;
@@ -233,5 +249,60 @@ button:hover {
 
 .faq-item h3 {
     font-size: 18px;
-    color: #13469a;
+    color: #42546a;
+}
+
+
+#map {
+    height: 500px;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 15px; /* Zaokrąglenie mapy */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    nav a {
+        flex: 1 1 45%;
+        margin-bottom: 10px;
+    }
+
+    .content-with-image {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .content-with-image .text {
+        width: 100%; 
+        margin: 0;
+        
+    }
+
+    .content-with-image .image {
+        width: 100%; 
+        margin: 0;
+    }
+
+    .content-with-image .image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .star {
+        font-size: 18px; 
+    }
+}
+
+@media (min-width: 1000px) {
+    nav {
+        max-width: 100%;
+    }
 }

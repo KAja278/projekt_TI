@@ -3,61 +3,89 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #000000;
     background-color: #f9f9f9;
-    max-width: 1200px;
-    box-sizing: border-box;
-    margin: 0 auto;
 }
-
-h1, h2 {
-    text-align: center;
-}
-
 h1 {
-    color: #0066cc;
-    margin: 20px 0;
+    text-align: center;
+    color: #42546a; 
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: 20px 0;
 }
 
 h2 {
-    color: #13469a;
+    color: #42546a;
     margin: 20px 0;
 }
 
+
+header {
+    background-color: #6e8daf; 
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    max-height: 40px;
+    margin-right: 10px;
+}
+
+header .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1b232e;
+}
+
+
+
 nav {
+    background-color: #42546a; 
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    padding: 10px;
-    background-color: #13469a;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 1000px;
-    margin: 27px auto;
-    flex-wrap: wrap;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
-    flex: 1 1 auto;
-    text-align: center;
-    line-height: 50px;
-    font-size: 15px;
+    color: #1b232e;
     text-decoration: none;
     text-transform: uppercase;
-    color: #fff;
-    cursor: pointer;
-    padding: 0 5px;
-    min-width: 80px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    
 }
 
 nav a:hover {
-    background-color: #ffffff63;
+    background-color: #6e8daf;
     border-radius: 8px;
 }
 
 nav .active {
-    font-weight: bold;
-    color: #132b53;
+    background-color: #9dccfa; 
+    color: #1b232e; 
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
 }
 
 .section {
@@ -210,10 +238,10 @@ ul li {
 }
 
 footer {
+    background-color: #1b232e; 
+    color: #ffffff;
     text-align: center;
-    background: #333;
-    color: white;
-    padding: 10px 0;
+    padding: 15px 0;
     margin-top: 20px;
 }
 
