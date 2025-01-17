@@ -101,6 +101,19 @@ h2{
 }
 
 
+h4{
+    text-align: center;
+    color: #1b232e; 
+    font-size: 1.8rem; 
+    font-weight: 600; 
+    padding: 0; 
+    margin: 15px auto; 
+    border-radius: 8px; 
+    width: 95%;
+    max-width: 500px;
+    background-color: transparent;
+}
+
 section {
     padding: 20px;
 }
@@ -169,11 +182,41 @@ form button:hover {
 footer {
     background-color: #1b232e; 
     color: #ffffff;
-    text-align: center;
     padding: 15px 0;
-    margin-top: 20px;
 }
 
+.footer-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.footer-container .copyright {
+    font-size: 14px;
+}
+
+.footer-container .social-media {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-container .social-media .social-icon img {
+    height: 24px;
+    width: 24px;
+    border: 2px solid #ffffff; 
+    border-radius: 50%; 
+    padding: 4px; 
+    background-color: #ffffff; 
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-container .social-media .social-icon img:hover {
+    transform: scale(1.2); 
+    border-color: #9dccfa; 
+    cursor: pointer;
+}
 form {
     display: flex;
     flex-direction: column;

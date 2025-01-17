@@ -242,10 +242,42 @@ ul li {
 footer {
     background-color: #1b232e; 
     color: #ffffff;
-    text-align: center;
     padding: 15px 0;
-    margin-top: 20px;
 }
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.footer-container .copyright {
+    font-size: 14px;
+}
+
+.footer-container .social-media {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-container .social-media .social-icon img {
+    height: 24px;
+    width: 24px;
+    border: 2px solid #ffffff; 
+    border-radius: 50%; 
+    padding: 4px; 
+    background-color: #ffffff; 
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-container .social-media .social-icon img:hover {
+    transform: scale(1.2); 
+    border-color: #9dccfa; 
+    cursor: pointer;
+}
+
 
 .kryterium {
     text-align: left;
@@ -259,11 +291,6 @@ footer {
     cursor: pointer;
     transition: color 0.3s ease, transform 0.2s ease;
     margin-right: 5px;
-}
-
-.star:hover {
-    color: #ffcc00; 
-    transform: scale(1.2); 
 }
 
 .star.active {

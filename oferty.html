@@ -24,6 +24,7 @@
             <a href="./kontakt.html">Kontakt</a>
             <a href="./onas.html">O nas</a>
         </nav>
+        <h4>Nasze Oferty</h4>
         <div class="filter-container">
             <label for="continent-filter">Filtruj według kontynentu:</label>
             <select id="continent-filter">
@@ -42,7 +43,7 @@
                 <option value="cultural">Kulturalna</option>
             </select>
         </div>
-        <h2>Nasze Oferty</h2>
+        
     
         
     <div class="offer" data-category="Asia" data-type="cultural">
@@ -153,7 +154,22 @@
 
     </div>
     <footer>
-        <p>Copyright © 2019 | Biuro Podróży Kraken</p>
+        <div class="footer-container">
+            <div class="copyright">
+                <p>Copyright © 2019 | Biuro Podróży Kraken</p>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                    <img src="instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="social-icon">
+                    <img src="facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.youtube.com" target="_blank" class="social-icon">
+                    <img src="youtube.png" alt="YouTube">
+                </a>
+            </div>
+        </div>
     </footer>
     <script>
        document.getElementById('continent-filter').addEventListener('change', applyFilters);
