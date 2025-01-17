@@ -306,3 +306,39 @@ button:hover {
         max-width: 100%;
     }
 }
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+li {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+li:hover {
+    background-color: #e6f2ff;
+    padding-left: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+li.active {
+    font-weight: bold;
+    color: #13469a;
+    background-color: #cfe2ff;
+    border-left: 5px solid #0066cc;
+    padding-left: 30px;
+}
+
+ul li {
+    background-color: #f9f9f9;
+    padding-left: 25px;
+    margin-bottom: 12px;
+} 
