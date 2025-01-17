@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     color: #000000;
-    background-color: #f9f9f9;
+    background: linear-gradient(to bottom, #ffffff, #9dccfa); 
 }
 
 h1 {
@@ -218,7 +218,8 @@ footer {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 80%;
+    max-width: 100%;
+    width: 90%;
 }
 
 .filter-container label {
@@ -227,6 +228,8 @@ footer {
     color: #42546a;
     font-weight: 600;
     font-size: 14px;
+    width: 100%;
+    text-align: center;
 }
 
 .filter-container select {
@@ -235,6 +238,8 @@ footer {
     border-radius: 5px;
     border: 1px solid #ccc;
     background-color: #ffffff;
+    width: 100%;
+    text-align: center;
 }
 
 .offer-details{
@@ -284,5 +289,16 @@ footer {
 @media (min-width: 1000px) {
     nav {
         max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .filter-container {
+        flex-direction: column; 
+        align-items: center;   
+        gap: 10px;             
+        width: 100%;           
+        padding: 10px;         
+        box-shadow: none;      
     }
 }
