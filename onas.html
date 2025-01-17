@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Kraken-Biuro Podróży</title>
-        <link rel="stylesheet" type="text/css" href="./onas.css">
+        <link rel="stylesheet" type="text/css" href="./o_nas.css">
         <link rel="icon" type="image/jpg" href="./favicon1.jpg">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,20 +22,8 @@
             <a href="./kontakt.html">Kontakt</a>
             <a href="#" class="active">O nas</a>
         </nav>
-
-        <h2>Tworzymy wspomnienia!</h2>
-
-        <section>
-            <article>
-                <h2>Nasze Galerie</h2>
-                <div class="gallery">
-                    <img src="image1.jpg" alt="Galeria 1">
-                    <img src="image2.jpg" alt="Galeria 2">
-                    <img src="image3.jpg" alt="Galeria 3">
-                    <img src="image4.jpg" alt="Galeria 4">
-                    <img src="image5.jpg" alt="Galeria 5">
-                </div>
-            </article>
+        
+        
             <article>
                 <h2>Nasze Doświadczenie</h2>
                 <p>
@@ -95,6 +83,18 @@
                     </li>
                 </ul>
             </article>
+
+            <section>
+                <article>
+                    <h2>Nasze Galerie</h2>
+                    <div class="blue-container">
+                        <div id="gallery">
+                            <img src="roys-peak-7008528_640.jpg" alt="Galeria">
+                        </div>
+                    </div>
+            </article>
+
+
             <article>
                 <h2>Skontaktuj się z nami</h2>
                 <form>
@@ -108,7 +108,22 @@
             </article>
         </section>
         <footer>
-            <p>Copyright © 2019 | Biuro Podróży Kraken</p>
+            <p>Copyright © 2024 | Kraken-Biuro Podróży</p>
         </footer>
+        
+        <script>
+            const galleryImages = ["roys-peak-7008528_640.jpg", "tourists-7334821_640.jpg", "adventure-1850178_640.jpg", "river-8105970_640.jpg", "man-5475371_640.jpg"]; 
+            let currentImageIndex = 0; 
+        
+            const galleryImgElement = document.querySelector("#gallery img");
+
+            function updateGalleryImage() {
+                currentImageIndex = (currentImageIndex + 1) % galleryImages.length; 
+                galleryImgElement.setAttribute("src", galleryImages[currentImageIndex]); 
+            }
+        
+            setInterval(updateGalleryImage, 3000);
+        </script>
+
     </body>
 </html>
