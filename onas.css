@@ -350,6 +350,7 @@ button:hover {
     }
 }
 
+
 ul {
     list-style: none;
     padding: 0;
@@ -385,3 +386,12 @@ ul li {
     padding-left: 25px;
     margin-bottom: 12px;
 } 
+
+
+.blue-container {
+background-color: rgba(66, 84, 130, 0.6); 
+padding: 20px; 
+border-radius: 10px; 
+margin: 20px auto; 
+width: 100%; 
+}
