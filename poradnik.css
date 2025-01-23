@@ -116,7 +116,14 @@ h3{
     margin-left: 17px;
 }
 
-p{
+.content p{
+    font-size: 1rem;
+    line-height: 1.8; 
+    color: #1b232e; 
+    margin: 10px 0;
+    margin-left: 20px;
+}
+.arcticle p{
     font-size: 1rem;
     line-height: 1.8; 
     color: #1b232e; 
@@ -253,15 +260,10 @@ footer {
     margin: 0 auto;
 }
 
-.footer-container .copyright {
-    font-size: 14px;
-}
-
 .footer-container .social-media {
     display: flex;
     gap: 10px;
 }
-
 .footer-container .social-media .social-icon img {
     height: 24px;
     width: 24px;
@@ -278,6 +280,9 @@ footer {
     cursor: pointer;
 }
 
+.copyright p{
+    font-size: 14px;
+}
 
 .rating-container {
     text-align: center;
@@ -418,6 +423,10 @@ form {
 
     .star {
         font-size: 18px; 
+    }
+
+    .footer-container{
+        flex-wrap: wrap;
     }
 }
 
