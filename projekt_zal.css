@@ -159,6 +159,7 @@ footer {
 
 .footer-container .copyright {
     font-size: 14px;
+    display: flex;
 }
 
 .footer-container .social-media {
