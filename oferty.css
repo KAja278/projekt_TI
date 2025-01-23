@@ -49,13 +49,7 @@ header .title {
 
 
 nav{
-    /*
-    width: 575px;
-    height: 50px;
-    margin: 27px auto;
-    background-color: #000;
-    border-radius: 8px;
-    */
+   
     background-color: #42546a; 
     display: flex;
     justify-content: space-around;
@@ -263,7 +257,7 @@ footer {
     background-color: #f9f9f9; 
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(66, 84, 106, 0.4);
     max-width: 100%;
     width: 90%;
 }
