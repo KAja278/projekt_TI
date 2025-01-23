@@ -298,13 +298,13 @@ footer {
 }
 
 .container h1 {
-    font-size: 2rem;    /* Zwiększenie rozmiaru nagłówka */
+    font-size: 2rem;    
     margin-bottom: 15px;
     color: #1b232e; 
 }
 
 .container p {
-    font-size: 1rem;   /* Zwiększenie rozmiaru tekstu w paragrafach */
+    font-size: 1rem;   
     margin: 10px 0;
     color: #000000; 
 }
@@ -315,10 +315,10 @@ footer {
     }
     
     .container h1 {
-        font-size: 1.5rem;    /* Zmniejszenie rozmiaru nagłówka w wersji mobilnej */
+        font-size: 1.5rem;    
     }
 
     .container p {
-        font-size: 0.9rem;    /* Zmniejszenie rozmiaru tekstu w paragrafach */
+        font-size: 0.9rem;  
     }
 }
