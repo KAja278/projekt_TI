@@ -55,8 +55,8 @@
                     <input type="date" id="travel-date" name="travel-date" required>
                 </div>
                 <div class="form-group">
-                    <label for="travel-date">Data zakończenia podróży:</label>
-                    <input type="date" id="travel-date" name="travel-date" required>
+                    <label for="travel-date-end">Data zakończenia podróży:</label>
+                    <input type="date" id="travel-date-end" name="travel-date-end" required>
                 </div>
 
                 
@@ -73,6 +73,7 @@
                         <option value="madagaskar">Madagaskar</option>
                         <option value="bhutan">Bhutan</option>
                         <option value="papua">Papua Nowa Gwinea</option>
+                        <option value="chile">Chile</option>
                         <option value="gruzja">Gruzja i Armenia</option>
                         <option value="gwatemala">Gwatemala</option>
                     </select>
@@ -162,6 +163,59 @@ function addMarkers(destinations) {
 
 // Wywołanie funkcji z pełną listą destynacji na start
 addMarkers(destinations);
+document.querySelector('form').addEventListener('submit', function (e) {
+    const startDate = new Date(document.getElementById('travel-date').value);
+    const endDate = new Date(document.getElementById('travel-date').value);
+    if (endDate <= startDate) {
+        alert("Data zakończenia podróży musi być późniejsza niż data rozpoczęcia!");
+        e.preventDefault();
+    }
+});
+var offerDates = {
+    "mongolia": {
+        start: "2025-04-31",
+        end: "2025-05-15"
+    },
+    "madagaskar": {
+        start: "2025-08-14",
+        end: "2025-08-31"
+    },
+    "bhutan": {
+        start: "2025-12-11",
+        end: "2025-12-21"
+    },
+    "papua": {
+        start: "2026-01-02",
+        end: "2026-01-16"
+    },
+    "chile": {
+        start: "2025-09-21",
+        end: "2025-10-01"
+    },
+    "gruzja": {
+        start: "2025-07-20",
+        end: "2025-07-30"
+    },
+    "gwatemala": {
+        start: "2026-04-11",
+        end: "2026-04-21"
+    }
+};
+document.getElementById('offer').addEventListener('change', function () {
+    var offerValue = this.value;
+    
+    // Jeśli wybrano ofertę, ustawiamy daty
+    if (offerValue && offerDates[offerValue]) {
+        var startDate = offerDates[offerValue].start;
+        var endDate = offerDates[offerValue].end;
+        
+        document.getElementById('travel-date').value = startDate;
+        document.getElementById('travel-date').setAttribute("min", startDate);  // ustawiamy minimalną datę na datę rozpoczęcia
+        
+        document.getElementById('travel-date-end').value = endDate;
+        document.getElementById('travel-date-end').setAttribute("min", startDate);  // ustawiamy minimalną datę na datę rozpoczęcia
+    }
+});
 </script>
     </body>
 </html>
