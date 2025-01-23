@@ -100,8 +100,16 @@ img{
 
 h2{
     text-align: center;
+
 }
 
+h3{
+    margin-left: 17px;
+}
+
+p{
+    margin-left: 20px;
+}
 
 h4{
     text-align: center;
