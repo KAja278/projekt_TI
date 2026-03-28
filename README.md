@@ -1,7 +1,7 @@
 # Biuro podróży
 
 Prosta strona internetowa biura podróży prezentująca oferty wycieczek.
-##Technologie
+## Technologie
 
 HTML, CSS, JSON
 
