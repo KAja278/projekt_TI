@@ -8,8 +8,8 @@ HTML, CSS, JSON
 ## Uruchomienie
 
 ```bash
-git clone https://github.com/twoj-user/travel-agency-website.git
-cd travel-agency-website
+git clone https://github.com/KAja278/projekt_TI.git
+cd projekt_TI
 ```
 
 Otwórz `index.html` w przeglądarce.
